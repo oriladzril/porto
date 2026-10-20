@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portofolio Muh Adzril Aziz — mahasiswa D4 Teknik Elektronika dengan minat pada chip design, VLSI architecture, dan embedded systems." />
+  <title>Muh Adzril Aziz | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Beranda">
+      <span class="brand-mark">AA</span>
+      <span>AZRIL<span class="brand-dot">.</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka navigasi" aria-expanded="false">☰</button>
+    <nav id="navMenu">
+      <a href="#skills">Skill</a>
+      <a href="#projects">Project</a>
+      <a href="#academic">Academic</a>
+      <a href="#experience">Experience</a>
+      <a class="nav-contact" href="#contact">Contact <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> ELECTRONICS ENGINEERING STUDENT</div>
+        <h1>Hi, I’m <span class="gradient-text">Muh Adzril Aziz.</span></h1>
+        <p class="hero-intro">Mahasiswa D4 Teknik Elektronika yang tertarik pada <strong>Chip Design, VLSI Architecture, Embedded Systems,</strong> pengembangan firmware, integrasi sensor, dan perancangan perangkat elektronik.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Lihat project <span>↓</span></a>
+          <a class="button button-ghost" href="#contact">Hubungi saya <span>↗</span></a>
+        </div>
+        <div class="hero-meta">
+          <a href="#skills"><span class="meta-number">01</span><span class="meta-label">Skill</span></a>
+          <a href="#projects"><span class="meta-number">02</span><span class="meta-label">Project</span></a>
+          <a href="#academic"><span class="meta-number">03</span><span class="meta-label">Academic</span></a>
+          <a href="#experience"><span class="meta-number">04</span><span class="meta-label">Experience</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-topline"><span>PORTFOLIO / ELECTRONICS</span><span>HARDWARE × SOFTWARE</span></div>
+        <div class="chip-scene">
+          <div class="circuit-grid"></div>
+          <svg class="circuit-lines" viewBox="0 0 500 430" aria-hidden="true">
+            <g fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5">
+              <path d="M0 88 H86 V132 H150"/><path d="M0 116 H52 V174 H150"/>
+              <path d="M500 80 H412 V126 H350"/><path d="M500 108 H450 V176 H350"/>
+              <path d="M0 300 H72 V264 H150"/><path d="M0 326 H104 V300 H150"/>
+              <path d="M500 294 H430 V260 H350"/><path d="M500 324 H390 V300 H350"/>
+              <path d="M194 0 V64 H220 V104"/><path d="M306 0 V62 H280 V104"/>
+              <path d="M202 430 V370 H224 V326"/><path d="M298 430 V370 H276 V326"/>
+            </g>
+            <g fill="#b8f36b">
+              <circle cx="86" cy="88" r="3"/><circle cx="52" cy="116" r="3"/>
+              <circle cx="412" cy="80" r="3"/><circle cx="450" cy="108" r="3"/>
+              <circle cx="72" cy="300" r="3"/><circle cx="430" cy="294" r="3"/>
+              <circle cx="194" cy="64" r="3"/><circle cx="306" cy="62" r="3"/>
+            </g>
+          </svg>
+          <div class="chip">
+            <div class="chip-pins top-pins"></div><div class="chip-pins bottom-pins"></div>
+            <div class="chip-pins left-pins"></div><div class="chip-pins right-pins"></div>
+            <div class="chip-inner">
+              <span class="chip-symbol">⌁</span>
+              <span class="chip-name">ELECTRONICS<br>ENGINEERING</span>
+              <span class="chip-sub">DESIGN · BUILD · LEARN</span>
+            </div>
+          </div>
+          <div class="float-tag tag-sensor"><span class="tag-icon">◉</span><span><b>Chip Design</b><small>Digital logic</small></span></div>
+          <div class="float-tag tag-firmware"><span class="tag-icon">⌘</span><span><b>Embedded</b><small>Firmware & systems</small></span></div>
+          <div class="float-tag tag-output"><span class="tag-icon">↗</span><span><b>Hardware</b><small>Electronic design</small></span></div>
+        </div>
+        <div class="visual-bottomline"><span>LEARNING THROUGH PROJECTS</span><span class="live-indicator">● PORTFOLIO</span></div>
+      </div>
+      <div class="scroll-cue"><span></span> SCROLL TO EXPLORE</div>
+    </section>
+
+    <section class="section-wrap skills-section" id="skills">
+      <div class="section-heading">
+        <span class="section-index">02 / KOMPETENSI</span>
+        <h2>Technical <span class="muted-text">interests & skills.</span></h2>
+        <p class="section-description">Bidang dan tools yang pernah dipelajari atau digunakan dalam perkuliahan dan proyek.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <div class="skill-card-head"><span class="skill-icon">⌘</span><span class="card-count">01</span></div>
+          <h3>Embedded & Firmware</h3>
+          <p>Mengembangkan program mikrokontroler, membaca sensor, mengendalikan aktuator, dan mengintegrasikan periferal.</p>
+          <div class="skill-tags"><span>Arduino</span><span>ESP32</span><span>STM32</span><span>C/C++</span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head"><span class="skill-icon">⌁</span><span class="card-count">02</span></div>
+          <h3>Komunikasi & IoT</h3>
+          <p>Menghubungkan perangkat, mengirim data sensor, dan membangun alur komunikasi antarperangkat.</p>
+          <div class="skill-tags"><span>UART</span><span>I²C</span><span>SPI</span><span>BLE</span><span>MQTT</span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head"><span class="skill-icon">▦</span><span class="card-count">03</span></div>
+          <h3>Elektronika & PCB</h3>
+          <p>Menyusun rangkaian, memilih komponen dasar, membuat layout PCB, dan memeriksa konektivitas desain.</p>
+          <div class="skill-tags"><span>KiCad</span><span>EasyEDA</span><span>Datasheet</span><span>Debugging</span></div>
+        </article>
+        <article class="skill-card">
+          <div class="skill-card-head"><span class="skill-icon">⌗</span><span class="card-count">04</span></div>
+          <h3>Software & Data</h3>
+          <p>Menulis kode pendukung untuk analisis, visualisasi data, serta pengenalan awal pada kecerdasan buatan.</p>
+          <div class="skill-tags"><span>Python</span><span>Machine Learning</span><span>Data Vis.</span><span>AI</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap projects-section" id="projects">
+      <div class="section-heading projects-heading">
+        <div><span class="section-index">03 / KARYA PILIHAN</span><h2>Selected <span class="muted-text">projects.</span></h2></div>
+        <div class="project-filters" role="group" aria-label="Filter proyek">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="embedded">Embedded</button>
+          <button class="filter-btn" data-filter="iot">IoT</button>
+          <button class="filter-btn" data-filter="hardware">Hardware</button>
+        </div>
+      </div>
+      
+        <article class="project-card" data-category="hardware">
+          <div class="project-art art-pcb">
+            <div class="art-label">PROJECT / 001</div><div class="pcb-board">
+              <div class="pcb-chip pcb-main">ESP32</div><div class="pcb-chip pcb-radio">LoRa</div>
+              <div class="pcb-track track-1"></div><div class="pcb-track track-2"></div><div class="pcb-track track-3"></div>
+              <span class="pcb-hole hole-1"></span><span class="pcb-hole hole-2"></span><span class="pcb-hole hole-3"></span><span class="pcb-hole hole-4"></span>
+            </div>
+            <span class="pcb-caption">PCB LAYOUT / REV A</span>
+          </div>
+          <div class="project-info">
+            <div class="project-meta"><span>HARDWARE DESIGN</span><span>03</span></div>
+            <h3>ESP32 + LoRa PCB</h3>
+            <p>Perancangan PCB untuk mengintegrasikan mikrokontroler dan modul LoRa, dengan perhatian pada penempatan komponen, jalur daya, ground, dan area antena.</p>
+            <div class="project-stack"><span>KiCad</span><span>ESP32</span><span>SX1278</span><span>PCB Layout</span></div>
+            <!-- Tautan diperbarui -->
+            <a class="project-link" href="projects/esp32-lora-pcb.html">Lihat detail proyek <span>↗</span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-wrap journey-section" id="academic">
+      <div class="section-heading">
+        <span class="section-index">04 / PERJALANAN</span>
+        <h2>Academic <span class="muted-text">background.</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item"><span class="timeline-marker"></span><div class="timeline-date">CURRENT</div><div class="timeline-content"><h3>Politeknik Elektronika Negeri Surabaya (PENS)</h3><p>Diploma IV (D4) Teknik Elektronika.</p></div><span class="timeline-status">ONGOING</span></div>
+      </div>
+    </section>
+
+
+<!-- experience -->
+
+
+    <section class="section-wrap experience-section" id="experience">
+      <div class="section-heading">
+        <span class="section-index">05 / EXPERIENCE & COURSES</span>
+        <h2>Organization & <span class="muted-text">experience.</span></h2>
+        <p class="section-description">Beberapa pencapaian, sertifikasi, dan program relevan yang turut mendukung kompetensi teknis dan akademis.</p>
+      </div>
+      
+      <!-- Placeholder yang sudah diperbarui dengan pengalaman nyata -->
+
+      
+
+
+
+
+
+
+
+
+
+
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-inner section-wrap">
+        <span class="section-index">06 / KONTAK</span>
+        <div class="contact-layout">
+          <div>
+            <h2>Let’s <span class="gradient-text">connect.</span></h2>
+            <p>Terbuka untuk diskusi seputar chip design, VLSI, embedded systems, proyek kolaborasi, dan kesempatan magang.</p>
+          </div>
+          <div class="contact-links">
+            <a class="contact-link" id="emailLink" href="mailto:aziazril4@gmail.com"><span><small>EMAIL</small><b id="emailText">aziazril4@gmail.com</b></span><span>↗</span></a>
+            <!-- <a class="contact-link" id="githubLink" href="https://github.com/" target="_blank" rel="noreferrer"><span><small>GITHUB</small><b id="githubText">github.com/username</b></span><span>↗</span></a> -->
+            <a class="contact-link" id="linkedinLink" href="https://www.linkedin.com/in/muh-adzril-aziz" target="_blank" rel="noreferrer"><span><small>LINKEDIN</small><b id="linkedinText">Profil LinkedIn</b></span><span>↗</span></a>
+          </div>
+        </div>
+        <footer>
+          <a class="brand footer-brand" href="#home"><span class="brand-mark">AA</span><span>AZRIL<span class="brand-dot">.</span></span></a>
+          <span>Electronics · Chip Design · Embedded Systems</span>
+          <span>© <span id="year"></span> MUH ADZRIL AZIZ</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
