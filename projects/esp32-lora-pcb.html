@@ -1,0 +1,83 @@
+<main class="section-wrap project-detail-wrap">
+  
+  <a href="../index.html#projects" class="back-link">← KEMBALI KE PORTFOLIO</a>
+  <link rel="stylesheet" href="../style.css" />
+  <div class="project-header">
+   
+    <h1>ESP32 + LoRa</h1>
+    <p>sistem integrasi berbagai sensordan output, Iot (esp32 + LOra)</p>
+  </div>
+
+  <div class="project-content">
+    <h2>Latar Belakang</h2>
+    <p>Proyek ini dibuat sebagai bagian dari tugas mata kuliah Internet of Things (IoT) dengan tujuan untuk merancang dan merealisasikan sebuah papan sirkuit tercetak (PCB) 2 layer node IoT yang terintegrasi, praktis, dan mandiri berbasis modul mikrokontroler ESP32-DevKitC-32E serta modul radio LoRa Ai-Thinker Ra-02. Pembuatan proyek ini dilatarbelakangi oleh kebutuhan untuk menyatukan berbagai antarmuka sensor (potensiometer, LDR, PIR, DHT22, HC-SR04), aktuator (LED, buzzer, dua relay, servo), layar OLED, dan port ekspansi I2C ke dalam satu board ringkas yang mendukung komunikasi nirkabel jarak jauh..</p>
+
+    <!-- Contoh cara memanggil gambar -->
+<div class="image-gallery">
+  <div class="project-image-wrap">
+    <a href="../projects/gambar-01.jpg" target="_blank">
+      <img src="../projects/gambar-01.jpg" alt="gambar">
+    </a>
+    <div class="project-image-caption">Gambar 1: pcb belakang.</div>
+  </div>
+
+  <div class="project-image-wrap">
+    <a href="../projects/gambar-02.jpg" target="_blank">
+      <img src="../projects/gambar-02.jpg" alt="gambar">
+    </a>
+    <div class="project-image-caption">Gambar 2: pcb depan.</div>
+  </div>
+
+  <div class="project-image-wrap">
+    <a href="../projects/gambar-03.jpg" target="_blank">
+      <img src="../projects/gambar-03.jpg" alt="gambar">
+    </a>
+    <div class="project-image-caption">Gambar 3: pcb F.cu.</div>
+  </div>
+
+  <div class="project-image-wrap">
+    <a href="../projects/gambar-04.jpg" target="_blank">
+      <img src="../projects/gambar-04.jpg" alt="gambar">
+    </a>
+    <div class="project-image-caption">Gambar 4: pcb B.cu.</div>
+  </div>
+</div>
+    
+<h2>Tantangan &amp; Solusi</h2>
+
+<p>
+  Dalam proses perancangan layout PCB 2 <i>layer</i> untuk <i>node</i> IoT ini, terdapat beberapa tantangan teknis utama terkait tata letak (<i>placement</i>), isolasi termal sensor, serta integrasi bus komunikasi I2C. Berikut adalah masalah yang dihadapi beserta solusi teknis yang diterapkan:
+</p>
+
+<div class="section-block">
+  <h3>1. Penataan Komponen &amp; Isolasi Termal Sensor DHT22</h3>
+  <p>
+    <strong>Tantangan:</strong> Berdasarkan aturan perancangan, skematik terintegrasi dikunci (tidak boleh diubah) dan sensor suhu/kelembapan DHT22 diwajibkan berada di tepi papan serta jauh dari sumber panas seperti modul ESP32 maupun relay. Namun, dengan keterbatasan alokasi pin dan target ukuran papan yang ringkas (&le;100&times;100 mm), menempatkan DHT22 terlalu jauh dari ESP32 justru membuat jalur <i>routing</i> sinyal menjadi berbelit-belit dan memakan banyak ruang.
+  </p>
+  <p>
+    <strong>Solusi:</strong> Modul DHT22 ditempatkan di tepi papan pada posisi terdekat dengan pin header ESP32 guna menjaga jalur data sinyal tetap pendek, rapi, dan minim <i>noise</i>. Untuk mengatasi risiko transmisi panas konduksi dari area ESP32, dibuat area isolasi khusus dengan cara menghapus bidang tembaga (<i>copper pour</i> GND) pada layer <code>F.Cu</code> (layer atas) tepat di bawah footprint modul DHT22. Penghilangan tembaga ini memutus rambatan panas (<i>thermal conduction</i>) melalui lapisan PCB, sehingga hasil pengukuran sensor tetap akurat dan tidak terdistorsi panas mikrokontroler.
+  </p>
+</div>
+
+<div class="section-block">
+  <h3>2. Integrasi Bus I2C &amp; Routing Multidevice</h3>
+  <p>
+    <strong>Tantangan:</strong> Papan ini mengintegrasikan layar OLED 0.96" beserta dua port I2C eksternal tambahan (konektor JST PH 2.0 J11 &amp; J12) yang berbagi bus sinyal SDA dan SCL bersama. Pengoperasian beberapa node I2C secara simultan berpotensi menimbulkan ketidakstabilan sinyal atau <i>crosstalk</i> jika tata jalur tidak tepat.
+  </p>
+  <p>
+    <strong>Solusi:</strong> Jalur sinyal SDA dan SCL dirutekan secara sejajar berdampingan menggunakan lebar jalur standar 0.3 mm. Pasangan resistor <i>pull-up</i> R10 dan R11 (4.7k&Omega;) diletakkan berdekatan dengan jalur SDA/SCL menuju modul OLED untuk menjamin integritas sinyal digital. Selain itu, bidang tembaga ground (<i>ground plane</i>) di layer <code>B.Cu</code> tepat di bawah area bus I2C dijaga tetap utuh tanpa terpotong jalur sinyal lain.
+  </p>
+</div>
+
+<div class="section-block">
+  <h3>3. Isolasi Antena Radio &amp; Beban Daya Relay</h3>
+  <p>
+    <strong>Tantangan:</strong> Menata 57 footprint komponen dalam area terbatas sambil memenuhi aturan area bebas tembaga (<i>keepout zone</i>) antena ESP32 dan jarak aman (<i>clearance</i>) 2 mm untuk area beban tegangan relay.
+  </p>
+  <p>
+    <strong>Solusi:</strong> Ujung antena PCB ESP32 diletakkan tepat di tepi papan dengan area <i>Keepout</i> (bebas <i>track</i>, <i>via</i>, dan <i>copper pour</i>) di kedua layer. Blok relay K1/K2 beserta terminal block dikelompokkan khusus di satu sisi papan dengan memberi jarak pemisah minimal 2 mm dari sirkuit logika.
+  </p>
+</div>
+  </div>
+
+</main>
